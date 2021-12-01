@@ -9,12 +9,12 @@ var unikys = {
     }
 };
 
-console.log(whatsThis());                   //#1
-console.log(unikys.what());                 //#2
-console.log(whatsThis.call());              //#3
-console.log(whatsThis.apply(unikys));       //#4
-console.log(unikys.what.call(undefined));   //#5
-console.log(unikys.what.call(unikys));      //#6
+console.log(whatsThis());                   //#1 [object  Window]
+console.log(unikys.what());                 //#2 [object  unikys]
+console.log(whatsThis.call());              //#3 [object  Window]
+console.log(whatsThis.apply(unikys));       //#4 [object  unikys]
+console.log(unikys.what.call(undefined));   //#5 [object  Window]
+console.log(unikys.what.call(unikys));      //#6 [object  unikys]
 
 
 // Calling a member function set to a local
