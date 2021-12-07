@@ -1,0 +1,136 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "cssEffect": {
+      "name": "cssEffect",
+      "isOrdered": true,
+      "folders": {
+        "01": {
+          "name": "01",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "flex": {
+      "name": "flex",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "sass": {
+      "name": "sass",
+      "isOrdered": true,
+      "folders": {
+        "basics project": {
+          "name": "basics project",
+          "isOrdered": true,
+          "folders": {
+            "css": {
+              "name": "css",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "scss": {
+              "name": "scss",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {}
+        },
+        "Lorem": {
+          "name": "Lorem",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "script": {
+      "name": "script",
+      "isOrdered": true,
+      "folders": {
+        "속깊은 자바스크립트": {
+          "name": "속깊은 자바스크립트",
+          "isOrdered": true,
+          "folders": {
+            "chapter-2": {
+              "name": "chapter-2",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "chapter-3": {
+              "name": "chapter-3",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "chapter-4": {
+              "name": "chapter-4",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "chapter-5": {
+              "name": "chapter-5",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "chapter-6": {
+              "name": "chapter-6",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "chapter-7": {
+              "name": "chapter-7",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "chapter-8": {
+              "name": "chapter-8",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "chapter-9": {
+              "name": "chapter-9",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {
+            "info": 0
+          }
+        },
+        "select": {
+          "name": "select",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "wheel": {
+          "name": "wheel",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}
