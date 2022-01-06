@@ -1,10 +1,10 @@
 <template>
     <div>
         <ul>
-            <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem.key" class="shadow">
+            <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.key" class="shadow">
                 <i class="checkBtn fas fa-check" 
                     v-bind:class="{checkBtnCompleted: todoItem.completed}" 
-                    v-on:click="toggleComplete(todoItem)"></i>
+                    v-on:click="toggleComplete(todoItem, index)"></i>
                 <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
                 <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
                     <i class="fas fa-trash-alt"></i>
@@ -16,30 +16,13 @@
 
 <script>
 export default {
-    data() {
-        return {
-            todoItems: [],
-        }
-    },
-    created() {
-        if (localStorage.length > 0) {
-            for (var i=0;i < localStorage.length;i++) {
-                if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-                    this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-                }
-                
-            }
-        }
-    },
+    props: ['propsdata'],
     methods: {
         removeTodo(todoItem, index) {
-            localStorage.removeItem(todoItem);
-            this.todoItems.splice(index, 1);
+            this.$emit('removeItem', todoItem, index);
         },
-        toggleComplete(todoItem) {
-            todoItem.completed = !todoItem.completed;
-            localStorage.removeItem(todoItem.item);
-            localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
+        toggleComplete(todoItem, index) {
+            this.$emit('toggleItem', todoItem, index);
         },
     },
 }
@@ -66,6 +49,7 @@ li {
     line-height: 45px;
     color: #62acde;
     margin-right: 5px;
+    cursor: pointer;
 }
 .checkBtnCompleted {
     color: #b3adad;
@@ -75,6 +59,7 @@ li {
     color: #b3adad;
 }
 .removeBtn {
+    cursor: pointer;
     margin-left: auto;
     color: #de4343;
 }

@@ -8,7 +8,7 @@
 export default {
     methods: {
         clearTodo() {
-            localStorage.clear();
+            this.$emit('clearAll');
         },
     },
 }
@@ -24,6 +24,7 @@ export default {
     margin: 0 auto;
 }
 .clearAllBtn {
+    cursor: pointer;
     display: block;
     color: #e20303;
 }

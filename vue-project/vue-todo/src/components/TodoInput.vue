@@ -1,6 +1,6 @@
 <template>
     <div class="inputBox shadow">
-        <input type="text" v-model="newTodoItem">
+        <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo">
         <span class="addContainer" v-on:click="addTodo">
             <i class="fas fa-plus addBtn"></i>
         </span>
@@ -17,11 +17,7 @@ export default {
     methods: {
         addTodo() {
             if (this.newTodoItem !== '') {
-                var obj = {
-                    completed: false,
-                    item: this.newTodoItem
-                };
-                localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+                this.$emit('addTodoItem', this.newTodoItem);
                 this.clearInput();
             }
         },
@@ -54,6 +50,7 @@ input:focus {
     display: block;
     width: 3rem;
     border-radius: 0 5px 5px 0;
+    cursor: pointer;
 }
 .addBtn {
     color: #fff;
