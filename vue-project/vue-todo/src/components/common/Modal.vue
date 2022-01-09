@@ -4,24 +4,17 @@
             <div class="modal-wrapper">
                 <div class="modal-container">
 
+                    <!-- 모달 헤더 -->
                     <div class="modal-header">
                         <slot name="header">
                             default header
                         </slot>
                     </div>
 
+                    <!-- 모달 바디 -->
                     <div class="modal-body">
                         <slot name="body">
                             default body
-                        </slot>
-                    </div>
-
-                    <div class="modal-footer">
-                        <slot name="footer">
-                            default footer
-                            <button class="modal-default-button" @click="$emit('close')">
-                            OK
-                            </button>
                         </slot>
                     </div>
                 </div>
@@ -55,6 +48,7 @@ export default {
 }
 
 .modal-container {
+  text-align: center;
   width: 300px;
   margin: 0px auto;
   padding: 20px 30px;
