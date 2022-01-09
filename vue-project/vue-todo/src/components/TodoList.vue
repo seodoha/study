@@ -1,12 +1,12 @@
 <template>
     <div>
         <ul>
-            <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.key" class="shadow">
+            <li v-for="(todoItem, index) in this.storedTodoItems" v-bind:key="todoItem.key" class="shadow">
                 <i class="checkBtn fas fa-check" 
                     v-bind:class="{checkBtnCompleted: todoItem.completed}" 
-                    v-on:click="toggleComplete(todoItem, index)"></i>
+                    v-on:click="toggleComplete({todoItem, index})"></i>
                 <span v-bind:class="{textCompleted: todoItem.completed}">{{ todoItem.item }}</span>
-                <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
+                <span class="removeBtn" v-on:click="removeTodo({todoItem, index})">
                     <i class="fas fa-trash-alt"></i>
                 </span>
             </li>
@@ -15,16 +15,18 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
-    props: ['propsdata'],
     methods: {
-        removeTodo(todoItem, index) {
-            this.$emit('removeItem', todoItem, index);
-        },
-        toggleComplete(todoItem, index) {
-            this.$emit('toggleItem', todoItem, index);
-        },
+        ...mapMutations({
+            removeTodo: 'removeOneItem',
+            toggleComplete: 'toggleOneItem'
+        })
     },
+    computed: {
+        ...mapGetters(['storedTodoItems'])
+    }
 }
 </script>
 
